@@ -1,2 +1,57 @@
+# tests
 tests/testdata
+
+# Binaries for programs and plugins
 *.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.app
+*.bin
+
+# Archives and compressed files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.gz
+*.bz2
+
+# OS-specific crap
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# Go build artifacts
+*.test
+/build/
+/dist/
+/bin/
+/vendor/
+/coverage.out
+
+# Logs
+*.log
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Git-sensitive backups
+*.orig
+*.rej
+
+# Env and secrets
+.env
+.env.*
+*.key
+*.pem
+*.crt
