@@ -35,7 +35,6 @@ func App() *cli.App {
 }
 
 func Run(cfg *config.Config) error {
-	PrintBanner()
 	var urls []string
 	if url != "" {
 		urls = append(urls, url)

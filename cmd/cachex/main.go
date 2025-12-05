@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	cmd.PrintBanner()
 	if err := cmd.App().Run(os.Args); err != nil {
 		logger.Errorf(err.Error())
 	}
