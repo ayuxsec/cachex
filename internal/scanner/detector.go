@@ -29,9 +29,11 @@ func DetectResponseChanges(
 	var changeType ResponseChangeType
 	// compare the responses
 	switch {
+	case modifiedResponse.StatusCode == 429 || originalResponse.StatusCode == 429: // 429 is a special case for rate limiting, we ignore it as false positive
+		return NoChange, errRateLimit
 	case modifiedResponse.Location != originalResponse.Location:
 		changeType = ChangedLocationHeader
-	case modifiedResponse.StatusCode != originalResponse.StatusCode && modifiedResponse.StatusCode != 429: // 429 is a special case for rate limiting, we ignore it as false positive
+	case modifiedResponse.StatusCode != originalResponse.StatusCode:
 		changeType = ChangedStatusCode
 	case modifiedResponse.Body != originalResponse.Body:
 		changeType = ChangedBody

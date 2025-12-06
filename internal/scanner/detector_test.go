@@ -15,7 +15,7 @@ func TestDetectResponseChanges(t *testing.T) {
 
 	modifiedResponse := client.Response{
 		Location:   "",
-		StatusCode: 200,
+		StatusCode: 429,
 		Body:       "Hello, Pwned?",
 	}
 

@@ -2,6 +2,7 @@
 package scanner
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/ayuxdev/cachex/internal/pkg/client"
@@ -27,7 +28,11 @@ func (s *ScannerArgs) RunPoisoningTest() (*ScannerOutput, error) {
 	// Detect changes between the original and modified responses.
 	changeTypeDetected, err := DetectResponseChanges(*s.OriginalResponse, *modifiedResponse)
 	if err != nil {
-		return nil, fmt.Errorf("error detecting response changes: %v", err)
+		if errors.Is(err, errRateLimit) {
+			logger.Warnf("429 status code detected, while scanning %s. consider using lower concurrency in config or switch to a proxy server", s.URL)
+		} else {
+			return nil, fmt.Errorf("error detecting response changes: %v", err)
+		}
 	}
 
 	// Prepare output structure.

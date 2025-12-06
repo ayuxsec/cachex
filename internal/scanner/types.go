@@ -4,6 +4,7 @@
 package scanner
 
 import (
+	"errors"
 	"net/http"
 
 	"github.com/ayuxdev/cachex/internal/pkg/client"
@@ -78,3 +79,6 @@ const (
 	ChangedBody                                     // Response body changed
 	NoChange                                        // No change detected btwn the responses
 )
+
+// errRateLimit corresponds to an HTTP 429 status code rate-limit condition.
+var errRateLimit = errors.New("unreliable response due to 429 status code detected")
