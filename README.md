@@ -11,7 +11,6 @@
   <img src="https://img.shields.io/github/license/ayuxsec/cachex?style=flat-square">
 </p>
 
-![demo](images/cachex-demo.gif)
 
 ## 🌟 Why CacheX?
 
@@ -26,7 +25,7 @@ This produces **tons of false positives** and rarely confirms a real exploit.
 
 It performs **behavioral diffing**, **multi-threaded poisoning**, and **persistence verification**, confirming only real, weaponizable cache poisoning.
 
-If CacheX says *[vuln]* - it's legit.
+[![demo](https://asciinema.org/a/0t6ga94iTdGmMuCP99KQsAZDs.svg)](https://asciinema.org/a/0t6ga94iTdGmMuCP99KQsAZDs)
 
 ## 🔥 Features
 
