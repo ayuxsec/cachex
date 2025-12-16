@@ -4,8 +4,8 @@ package scanner
 import (
 	"fmt"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
-	log "github.com/ayuxdev/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
+	log "github.com/ayuxsec/cachex/internal/pkg/logger"
 )
 
 // RunBatchScan runs the cache poisoning scan on a batch of URLs concurrently and returns results + all encountered errors.

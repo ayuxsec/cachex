@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ayuxdev/cachex/pkg/config"
+	"github.com/ayuxsec/cachex/pkg/config"
 )
 
 func TestBuildHelpMessage(t *testing.T) {

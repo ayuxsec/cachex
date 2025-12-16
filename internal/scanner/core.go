@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
-	"github.com/ayuxdev/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
 )
 
 // RunPoisoningTest tests the target URL for cache poisoning by:

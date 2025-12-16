@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ayuxdev/cachex/pkg/version"
+	"github.com/ayuxsec/cachex/pkg/version"
 )
 
 var banner = `
@@ -18,5 +18,5 @@ var banner = `
 
 func PrintBanner() {
 	fmt.Fprint(os.Stderr, banner) // Print the ASCII banner
-	fmt.Fprintf(os.Stderr, "               v"+version.Version+", with <3 by @ayuxdev\n\n")
+	fmt.Fprintf(os.Stderr, "               v"+version.Version+", with <3 by @ayuxsec\n\n")
 }

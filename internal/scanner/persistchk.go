@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
 )
 
 // PoisoningError aggregates multiple poisoning errors

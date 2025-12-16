@@ -7,8 +7,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/cacheX-blueviolet?style=flat-square">
-  <img src="https://img.shields.io/github/go-mod/go-version/ayuxdev/cachex?style=flat-square">
-  <img src="https://img.shields.io/github/license/ayuxdev/cachex?style=flat-square">
+  <img src="https://img.shields.io/github/go-mod/go-version/ayuxsec/cachex?style=flat-square">
+  <img src="https://img.shields.io/github/license/ayuxsec/cachex?style=flat-square">
 </p>
 
 ![demo](images/cachex-demo.gif)
@@ -43,13 +43,13 @@ If CacheX says *[vuln]* - it's legit.
 ## 🔧 Installation
 
 ```bash
-go install github.com/ayuxdev/cachex/cmd/cachex@latest
+go install github.com/ayuxsec/cachex/cmd/cachex@latest
 ```
 
 Or build manually:
 
 ```bash
-git clone https://github.com/ayuxdev/cachex
+git clone https://github.com/ayuxsec/cachex
 cd cachex
 go build -o cachex "cmd/cachex/main.go"
 ./cachex -h
@@ -311,4 +311,4 @@ Sure, PRs are welcome!
 
 ## 📜 License
 
-MIT © [@ayuxdev](https://github.com/ayuxdev)
+MIT © [@ayuxsec](https://github.com/ayuxsec)

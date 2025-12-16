@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ayuxdev/cachex/internal/pkg/config"
+	"github.com/ayuxsec/cachex/internal/pkg/config"
 )
 
 func TestScanner(t *testing.T) {

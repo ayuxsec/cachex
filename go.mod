@@ -1,4 +1,4 @@
-module github.com/ayuxdev/cachex
+module github.com/ayuxsec/cachex
 
 go 1.23.5
 

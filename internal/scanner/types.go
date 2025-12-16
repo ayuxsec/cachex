@@ -7,7 +7,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
 )
 
 // ScannerArgs defines the parameters required for scanning a target URL for cache poisoning vulnerabilities.

@@ -36,5 +36,5 @@ archives:
 
 release:
   github:
-    owner: ayuxdev
+    owner: ayuxsec
     name: cachex

@@ -1,8 +1,8 @@
 package cachex
 
 import (
-	"github.com/ayuxdev/cachex/internal/pkg/logger"
-	"github.com/ayuxdev/cachex/internal/scanner"
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/internal/scanner"
 )
 
 // mapLogMode maps the string log mode to the corresponding scanner.LogMode

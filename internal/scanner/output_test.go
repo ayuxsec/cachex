@@ -3,7 +3,7 @@ package scanner
 import (
 	"testing"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
 )
 
 func TestWriteOutputToFile(t *testing.T) {

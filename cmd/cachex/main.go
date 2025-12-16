@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/ayuxdev/cachex/internal/app/cachex/cmd"
-	"github.com/ayuxdev/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/internal/app/cachex/cmd"
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
 )
 
 func main() {

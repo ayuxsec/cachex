@@ -3,7 +3,7 @@ package config
 import (
 	"time"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
 )
 
 // Config represents application wide configuration

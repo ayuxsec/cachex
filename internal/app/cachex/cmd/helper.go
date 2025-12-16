@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/ayuxdev/cachex/pkg/config"
+	"github.com/ayuxsec/cachex/pkg/config"
 )
 
 func buildHelpMessage(cfg *config.Config) string {

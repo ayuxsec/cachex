@@ -5,7 +5,7 @@ CMD_DIR := "cmd/$(APP_NAME)/main.go"
 
 .PHONY: install
 install:
-	go install github.com/ayuxdev/cachex/cmd/cachex@latest
+	go install github.com/ayuxsec/cachex/cmd/cachex@latest
 
 .PHONY: run
 run:

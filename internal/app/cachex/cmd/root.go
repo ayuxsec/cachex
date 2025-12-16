@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ayuxdev/cachex/internal/pkg/logger"
-	"github.com/ayuxdev/cachex/pkg/cachex"
-	"github.com/ayuxdev/cachex/pkg/config"
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/pkg/cachex"
+	"github.com/ayuxsec/cachex/pkg/config"
 	"github.com/urfave/cli/v2"
 )
 

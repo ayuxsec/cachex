@@ -3,10 +3,10 @@ package cachex
 import (
 	"time"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
-	"github.com/ayuxdev/cachex/internal/pkg/logger"
-	"github.com/ayuxdev/cachex/internal/scanner"
-	"github.com/ayuxdev/cachex/pkg/config"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/internal/scanner"
+	"github.com/ayuxsec/cachex/pkg/config"
 )
 
 // Scanner orchestrates the batch scanning of URLs for cache-related vulnerabilities.

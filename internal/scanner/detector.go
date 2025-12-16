@@ -7,8 +7,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/ayuxdev/cachex/internal/pkg/client"
-	"github.com/ayuxdev/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
 )
 
 // DetectResponseChanges analyzes the differences between the original and modified responses.
