@@ -1,3 +1,4 @@
+version: 2
 project_name: cachex
 
 before:
@@ -8,6 +9,8 @@ builds:
   - id: cachex
     main: ./cmd/cachex
     binary: cachex
+    ldflags:
+      - -X "github.com/ayuxsec/cachex/pkg/version.Version={{.Version}}"
     env:
       - CGO_ENABLED=0
     goos:
