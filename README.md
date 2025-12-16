@@ -48,7 +48,7 @@ go install github.com/ayuxsec/cachex/cmd/cachex@latest
 Or build manually:
 
 ```bash
-git clone https://github.com/ayuxsec/cachex
+git clone --depth=1 https://github.com/ayuxsec/cachex
 cd cachex
 go build -o cachex "cmd/cachex/main.go"
 ./cachex -h
@@ -311,3 +311,4 @@ Sure, PRs are welcome!
 ## 📜 License
 
 MIT © [@ayuxsec](https://github.com/ayuxsec)
+
