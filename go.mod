@@ -1,8 +1,11 @@
 module github.com/ayuxsec/cachex
 
-go 1.23.5
+go 1.24.0
 
-require github.com/urfave/cli/v2 v2.27.6
+require (
+	github.com/urfave/cli/v2 v2.27.6
+	golang.org/x/time v0.14.0
+)
 
 require (
 	github.com/fatih/color v1.18.0

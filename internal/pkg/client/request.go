@@ -1,9 +1,9 @@
 // Description: This file contains functions for making HTTP requests
 // including fetching responses and sending requests without reading responses.
-
 package client
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"net/http"
@@ -18,7 +18,17 @@ type Response struct {
 }
 
 // FetchResponse sends a GET request and returns the response.
-func FetchResponse(url string, requestHeaders map[string]string, httpClient *http.Client) (*Response, error) {
+func FetchResponse(
+	url string,
+	requestHeaders map[string]string,
+	r *RateLimitedClient,
+) (*Response, error) {
+	if r.Limiter != nil {
+		if err := r.Limiter.Wait(context.Background()); err != nil {
+			return nil, fmt.Errorf("rate limiter wait failed: %v", err)
+		}
+	}
+
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return &Response{}, fmt.Errorf("error creating HTTP request: %v", err)
@@ -30,7 +40,7 @@ func FetchResponse(url string, requestHeaders map[string]string, httpClient *htt
 	}
 
 	// Send request
-	resp, err := httpClient.Do(req)
+	resp, err := r.Client.Do(req)
 	if err != nil {
 		return &Response{}, fmt.Errorf("error sending HTTP request: %v", err)
 	}
@@ -52,7 +62,15 @@ func FetchResponse(url string, requestHeaders map[string]string, httpClient *htt
 }
 
 // SendRequest sends a request but does not read or return the response.
-func SendRequest(url string, requestHeaders map[string]string, httpClient *http.Client) error {
+func SendRequest(url string,
+	requestHeaders map[string]string,
+	r *RateLimitedClient,
+) error {
+	if r.Limiter != nil {
+		if err := r.Limiter.Wait(context.Background()); err != nil {
+			return fmt.Errorf("rate limiter wait failed: %v", err)
+		}
+	}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return fmt.Errorf("error creating HTTP request: %v", err)
@@ -64,7 +82,7 @@ func SendRequest(url string, requestHeaders map[string]string, httpClient *http.
 	}
 
 	// Send request (ignoring the response)
-	_, err = httpClient.Do(req)
+	_, err = r.Client.Do(req)
 	if err != nil {
 		return fmt.Errorf("error sending HTTP request: %v", err)
 	}
