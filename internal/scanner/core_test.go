@@ -5,12 +5,11 @@ import (
 	"testing"
 
 	"github.com/ayuxsec/cachex/internal/pkg/client"
-	"github.com/ayuxsec/cachex/internal/pkg/config"
 )
 
 func TestRunPoisoningTest(t *testing.T) {
 
-	labId := "0a00007f04f5a5b586fb892300d2006c"
+	labId := "0a16007f0495749580d50dda0084009f"
 
 	s := ScannerArgs{
 		URL: fmt.Sprintf("https://%s.web-security-academy.net/", labId),
@@ -32,7 +31,7 @@ func TestRunPoisoningTest(t *testing.T) {
 		NumThreads:        5,
 	}
 
-	s.Client = config.DefaultConfig().ClientConfig.CreateNewClient()
+	s.Client = client.DefaultConfig().CreateNewClient()
 	s.SetCacheBusterURL()
 
 	originalResponse, err := client.FetchResponse(s.cacheBusterURL, s.RequestHeaders, s.Client)
@@ -47,9 +46,6 @@ func TestRunPoisoningTest(t *testing.T) {
 	}
 
 	t.Logf("Scan result: %+v", scanResult)
-	if err != nil {
-		t.Fatalf("Error in scan result: %v", err)
-	}
 
 	if scanResult.IsVulnerable == false {
 		t.Logf("\n\n\n\n\nOriginal Response: %s", scanResult.OriginalResponse.Body)

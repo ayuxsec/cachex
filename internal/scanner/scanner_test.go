@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ayuxsec/cachex/internal/pkg/config"
+	"github.com/ayuxsec/cachex/internal/pkg/client"
 )
 
 func TestScanner(t *testing.T) {
@@ -33,7 +33,7 @@ func TestScanner(t *testing.T) {
 	}
 
 	// Ensure the client is properly initialized
-	s.Client = config.DefaultConfig().ClientConfig.CreateNewClient()
+	s.Client = client.DefaultConfig().CreateNewClient()
 
 	// Run the scan
 	scanResult, err := s.Run()

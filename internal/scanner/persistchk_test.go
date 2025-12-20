@@ -5,7 +5,6 @@ import (
 	"testing"
 
 	"github.com/ayuxsec/cachex/internal/pkg/client"
-	"github.com/ayuxsec/cachex/internal/pkg/config"
 )
 
 func TestVerifyResponsePersistence(t *testing.T) {
@@ -28,7 +27,7 @@ func TestVerifyResponsePersistence(t *testing.T) {
 		NumThreads:        5,
 	}
 
-	s.Client = config.DefaultConfig().ClientConfig.CreateNewClient()
+	s.Client = client.DefaultConfig().CreateNewClient()
 
 	modifiedResponse, err := client.FetchResponse(s.URL, MergeMaps(s.PayloadHeaders, s.RequestHeaders), s.Client)
 	if err != nil {

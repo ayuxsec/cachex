@@ -18,6 +18,16 @@ type Config struct {
 	ProxyURL              string        // Proxy URL for the HTTP client (optional)
 }
 
+// DefaultConfig returns a default configuration for the application
+func DefaultConfig() Config {
+	config := Config{
+		DialTimeout:           5 * time.Second,
+		HandshakeTimeout:      5 * time.Second,
+		ResponseHeaderTimeout: 5 * time.Second,
+	}
+	return config
+}
+
 // New creates a new HTTP client with custom transport settings.
 func (c Config) CreateNewClient() *http.Client {
 	// Custom transport settings for the HTTP client.
