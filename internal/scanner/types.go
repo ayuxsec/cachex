@@ -5,21 +5,20 @@ package scanner
 
 import (
 	"errors"
-	"net/http"
 
 	"github.com/ayuxsec/cachex/internal/pkg/client"
 )
 
 // ScannerArgs defines the parameters required for scanning a target URL for cache poisoning vulnerabilities.
 type ScannerArgs struct {
-	URL                    string                  // Target URL to scan
-	cacheBusterURL         string                  // Internal
-	ScanMode               ScanMode                // Mode of scanning (single or multi-header)
-	RequestHeaders         map[string]string       // Headers to be sent with the request
-	PayloadHeaders         map[string]string       // Headers to be used for cache poisoning
-	PersistenceCheckerArgs *PersistenceCheckerArgs // Arguments for checking cache persistence
-	OriginalResponse       *client.Response        // Original response without payload headers
-	Client                 *http.Client            // HTTP client to be used for sending requests
+	URL                    string                    // Target URL to scan
+	cacheBusterURL         string                    // Internal
+	ScanMode               ScanMode                  // Mode of scanning (single or multi-header)
+	RequestHeaders         map[string]string         // Headers to be sent with the request
+	PayloadHeaders         map[string]string         // Headers to be used for cache poisoning
+	PersistenceCheckerArgs *PersistenceCheckerArgs   // Arguments for checking cache persistence
+	OriginalResponse       *client.Response          // Original response without payload headers
+	Client                 *client.RateLimitedClient // HTTP client to be used for sending requests
 	LoggerArgs
 }
 

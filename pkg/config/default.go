@@ -32,6 +32,7 @@ func DefaultConfig() *Config {
 				HandshakeTimeout: 5,
 				ResponseTimeout:  10,
 				ProxyURL:         "",
+				RateLimitRPS:     0,
 			},
 			PersistenceCheckerArgs: PersistenceCheckerArgs{
 				Enabled:           true,

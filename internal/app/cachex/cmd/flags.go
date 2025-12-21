@@ -105,6 +105,12 @@ func BuildFlags() []cli.Flag {
 			Aliases: []string{"pcf"},
 			Usage:   "Path to payload config YAML file",
 		},
+		&cli.IntFlag{
+			Name:        "rate-limit-per-second",
+			Aliases:     []string{"rl"},
+			Destination: &cfg.ScannerConfig.Client.RateLimitRPS,
+			Value:       cfg.ScannerConfig.Client.RateLimitRPS,
+		},
 	}
 }
 

@@ -7,7 +7,7 @@ import (
 func TestCreateCacheBusterURL(t *testing.T) {
 	s := &ScannerArgs{URL: "https://example.com/?removeme=123"}
 	s.SetCacheBusterURL()
-	t.Logf(s.cacheBusterURL)
+	t.Log(s.cacheBusterURL)
 }
 
 func TestMergeMaps(t *testing.T) {

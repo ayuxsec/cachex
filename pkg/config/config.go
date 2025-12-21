@@ -22,10 +22,11 @@ type ScannerConfig struct {
 
 // ClientConfig defines the configuration for the HTTP client
 type ClientConfig struct {
-	DialTimeout      float64 `yaml:"dial_timeout"`      // Timeout for establishing the connection
-	HandshakeTimeout float64 `yaml:"handshake_timeout"` // Timeout for TLS handshake
-	ResponseTimeout  float64 `yaml:"response_timeout"`  // Timeout for server response headers
-	ProxyURL         string  `yaml:"proxy_url"`         // Proxy URL for the HTTP client (optional)
+	DialTimeout      float64 `yaml:"dial_timeout"`          // Timeout for establishing the connection
+	HandshakeTimeout float64 `yaml:"handshake_timeout"`     // Timeout for TLS handshake
+	ResponseTimeout  float64 `yaml:"response_timeout"`      // Timeout for server response headers
+	ProxyURL         string  `yaml:"proxy_url"`             // Proxy URL for the HTTP client (optional)
+	RateLimitRPS     int     `yaml:"rate_limit_per_second"` // Max Requests to send per second (0 = unlimited)
 }
 
 type PersistenceCheckerArgs struct {
