@@ -5,10 +5,13 @@ import (
 	"os"
 	"testing"
 
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
 	"github.com/ayuxsec/cachex/pkg/config"
 )
 
 func TestRun(t *testing.T) {
+	logger.DisableDebug = false
+	logger.EnableTimeStamp = true
 	var urls []string
 	file, _ := os.Open("../../tests/testdata/urls.txt")
 	defer file.Close()
