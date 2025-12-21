@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+
+	"github.com/ayuxsec/cachex/internal/pkg/logger"
 )
 
 // Response holds the response from the URL
@@ -23,6 +25,7 @@ func FetchResponse(
 	requestHeaders map[string]string,
 	r *RateLimitedClient,
 ) (*Response, error) {
+	logger.Debugf("Fetching Response of %s", url)
 	if r.Limiter != nil {
 		if err := r.Limiter.Wait(context.Background()); err != nil {
 			return nil, fmt.Errorf("rate limiter wait failed: %v", err)
@@ -66,6 +69,7 @@ func SendRequest(url string,
 	requestHeaders map[string]string,
 	r *RateLimitedClient,
 ) error {
+	logger.Debugf("Sending GET request to %s", url)
 	if r.Limiter != nil {
 		if err := r.Limiter.Wait(context.Background()); err != nil {
 			return fmt.Errorf("rate limiter wait failed: %v", err)
