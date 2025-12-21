@@ -23,7 +23,7 @@ type Config struct {
 
 type RateLimitedClient struct {
 	Client  *http.Client
-	Limiter *rate.Limiter // channel to limit requests
+	Limiter *rate.Limiter // limiter to limit requests
 }
 
 // DefaultConfig returns a default configuration for the application
