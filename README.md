@@ -13,6 +13,28 @@
 
 <img width="977" height="418" alt="Preview" src="https://github.com/user-attachments/assets/d5caf2b5-a580-48b9-80f7-9c19dc312721" />
 
+## Table of Contents
+
+- [Why CacheX](#why-cachex)
+- [FlowChart](#flowchart)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Scan a Single URL](#scan-a-single-url)
+  - [Scan Multiple Targets](#scan-multiple-targets)
+- [CLI Flags](#all-cli-flags)
+- [Examples](#example)
+- [Configuration](#configuration)
+  - [Configuration Files](#configuration)
+  - [Payload Headers](#payload-headers)
+- [Scan Modes](#scan-modes)
+- [Output Formats](#output-formats)
+  - [Pretty Output](#pretty-output)
+  - [JSON Output](#json-output)
+- [How CacheX Works](#how-cachex-works)
+- [Contributing](#contribute)
+- [License](#license)
+
 ## Why CacheX?
 
 Most cache poisoning scanners only check:
@@ -25,6 +47,32 @@ This produces **tons of false positives** and rarely confirms a real exploit.
 **CacheX is different.**
 
 It performs **behavioral diffing**, **multi-threaded poisoning**, and **persistence verification**, confirming only real, weaponizable cache poisoning.
+
+## Flowchart
+
+```mermaid
+flowchart TD
+    A[Target URL] --> B[Fetch Baseline Response]
+
+    B --> C{Scan Mode}
+
+    C -->|single| D[Test Payload Headers One by One]
+    C -->|multi| E[Test All Payload Headers Together]
+
+    D --> F[Compare Responses]
+    E --> F
+
+    F -->|No Change| G[Stop Not Vulnerable]
+
+    F -->|Response Changed| H[Launch Concurrent Poisoning Requests]
+
+    H --> I[Send Clean Request after Poisoning]
+
+    I --> J{Poisoned. Response Persists?}
+
+    J -->|No| K[Discard False Positive]
+    J -->|Yes| L[Confirmed Cache Poisoning]
+```
 
 ## Features
 
@@ -245,3 +293,4 @@ Sure, PRs are welcome!
 ## License
 
 MIT © [@ayuxsec](https://github.com/ayuxsec)
+
