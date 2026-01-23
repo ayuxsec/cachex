@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/ayuxsec/cachex/internal/app/cachex/cmd"
-	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/pkg/logger"
 )
 
 func main() {

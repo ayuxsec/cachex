@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/ayuxsec/cachex/internal/pkg/client"
-	log "github.com/ayuxsec/cachex/internal/pkg/logger"
+	log "github.com/ayuxsec/cachex/pkg/logger"
 )
 
 // RunBatchScan runs the cache poisoning scan on a batch of URLs concurrently and returns results + all encountered errors.

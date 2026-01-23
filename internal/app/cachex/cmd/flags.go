@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/pkg/logger"
 	"github.com/ayuxsec/cachex/pkg/config"
 	"github.com/urfave/cli/v2"
 	"gopkg.in/yaml.v3"

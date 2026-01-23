@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/pkg/logger"
 	"github.com/ayuxsec/cachex/pkg/cachex"
 	"github.com/ayuxsec/cachex/pkg/config"
 	"github.com/urfave/cli/v2"

@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/ayuxsec/cachex/internal/pkg/client"
-	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/pkg/logger"
 	"github.com/ayuxsec/cachex/internal/scanner"
 	"github.com/ayuxsec/cachex/pkg/config"
 )

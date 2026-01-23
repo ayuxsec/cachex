@@ -1,7 +1,7 @@
 package cachex
 
 import (
-	"github.com/ayuxsec/cachex/internal/pkg/logger"
+	"github.com/ayuxsec/cachex/pkg/logger"
 	"github.com/ayuxsec/cachex/internal/scanner"
 )
 
