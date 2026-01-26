@@ -17,7 +17,6 @@
 
 - [Why CacheX](#why-cachex)
 - [FlowChart](#flowchart)
-- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
   - [Scan a Single URL](#scan-a-single-url)
@@ -73,18 +72,6 @@ flowchart TD
     J -->|No| K[Discard False Positive]
     J -->|Yes| L[Confirmed Cache Poisoning]
 ```
-
-## Features
-
-* **High-speed multi-threaded scanning**
-* **Zero-FP design with behavioral diffing**
-* **Real-time cache poisoning attempts**
-* **Persistence confirmation for true vulnerabilities**
-* **Single and multi-header scan modes**
-* **YAML-based payload configuration**
-* **JSON or pretty output formats**
-* **Optional file-based export**
-* **Tentative vs confirmed vuln tagging**
 
 ## Installation
 
@@ -281,9 +268,9 @@ logger:
 1. Fetches baseline response
 2. Injects payload headers
 3. Detects response manipulation (body, code, redirect)
-4. If changed → launches concurrent poisoning attempts
+4. If changed; launches concurrent poisoning attempts
 5. Fetches clean requests
-6. If poisoned response persists → confirmed vulnerability
+6. If poisoned response persists = ***confirmed vulnerability***
 7. Outputs PoC link
 
 ## Contribute
@@ -293,4 +280,5 @@ Sure, PRs are welcome!
 ## License
 
 MIT © [@ayuxsec](https://github.com/ayuxsec)
+
 
